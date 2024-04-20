@@ -17,7 +17,8 @@ jobs:
         with:
           project_id: ${{ secrets.GOOGLE_PROJECT }}
           credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-                
+
+                 
       - name: build and push the docker image
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
@@ -25,8 +26,4 @@ jobs:
           gcloud auth configure-docker australia-southeast2-docker.pkg.dev
           cd front_end_project
           docker build -t australia-southeast2-docker.pkg.dev/platinum-form-420822/cloud-run-source-deploy/nginx:latest .
-          options:
-            defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
           docker push australia-southeast2-docker.pkg.dev/platinum-form-420822/cloud-run-source-deploy/nginx:latest
-          options:
-            defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
