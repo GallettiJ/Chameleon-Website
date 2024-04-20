@@ -26,3 +26,4 @@ jobs:
           cd front_end_project
           docker build -t australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/chameleon-image-prod/nginx:latest .
           docker push australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/chameleon-image-prod/nginx:latest
+      
